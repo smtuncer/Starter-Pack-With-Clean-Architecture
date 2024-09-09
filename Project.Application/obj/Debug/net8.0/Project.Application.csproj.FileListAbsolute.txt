@@ -1,0 +1,15 @@
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\bin\Debug\net8.0\Project.Application.deps.json
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\bin\Debug\net8.0\Project.Application.dll
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\bin\Debug\net8.0\Project.Application.pdb
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\Project.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\Project.Application.AssemblyInfoInputs.cache
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\Project.Application.AssemblyInfo.cs
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\Project.Application.csproj.CoreCompileInputs.cache
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\Project.Application.dll
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\refint\Project.Application.dll
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\Project.Application.pdb
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\ref\Project.Application.dll
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\Project.Application.csproj.AssemblyReference.cache
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\bin\Debug\net8.0\Project.Domain.dll
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\bin\Debug\net8.0\Project.Domain.pdb
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Application\obj\Debug\net8.0\Project..E365C10A.Up2Date
