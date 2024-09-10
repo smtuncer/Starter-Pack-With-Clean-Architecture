@@ -9,6 +9,7 @@ public class MappingProfile : Profile
     public MappingProfile()
     {
         CreateMap<CreateBlogCommand, BlogDto>();
+        CreateMap<UpdateBlogCommand, BlogDto>();
         CreateMap<BlogDto, Blog>().ReverseMap();
 
 

@@ -9,3 +9,4 @@ C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.
 C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Domain\obj\Debug\net8.0\refint\Project.Domain.dll
 C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Domain\obj\Debug\net8.0\Project.Domain.pdb
 C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Domain\obj\Debug\net8.0\ref\Project.Domain.dll
+C:\Users\smtun\Desktop\.Net Core\SELÇUK\ReferanceProject\ProjectServer\Project.Domain\obj\Debug\net8.0\Project.Domain.sourcelink.json

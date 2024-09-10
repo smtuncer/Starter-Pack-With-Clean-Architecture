@@ -2,6 +2,7 @@
 using Project.Domain.Dtos;
 using Project.Domain.Entities;
 using Project.Domain.Interfaces;
+using Project.Domain.Model;
 
 namespace Project.Application.Services;
 public class BlogService : IBlogService
@@ -16,31 +17,95 @@ public class BlogService : IBlogService
         _unitOfWork = unitOfWork;
         _mapper = mapper;
     }
-    public async Task AddAsync(BlogDto dto)
+    async Task<ResultModel<IEnumerable<BlogDto>>> IBlogService.GetAllAsync()
     {
-        var entity = _mapper.Map<Blog>(dto);
-        await _repository.AddAsync(entity);
-        await _unitOfWork.CommitAsync();
+        try
+        {
+            var entities = await _repository.GetAllAsync(); // Performans için AsNoTracking
+            var dtos = _mapper.Map<IEnumerable<BlogDto>>(entities);
+            return ResultModel<IEnumerable<BlogDto>>.Succeed(dtos);
+        }
+        catch (Exception ex)
+        {
+            return ResultModel<IEnumerable<BlogDto>>.Failure(500, ex.Message);
+        }
     }
-    public async Task<IEnumerable<BlogDto>> GetAllAsync()
+    async Task<ResultModel<BlogDto>> IBlogService.GetByIdAsync(string id)
     {
-        var entities = await _repository.GetAllAsync();
-        return _mapper.Map<IEnumerable<BlogDto>>(entities);
+        try
+        {
+            var entity = await _repository.GetByIdAsync(id); // Performans için AsNoTracking
+
+            if (entity is null)
+            {
+                return ResultModel<BlogDto>.Failure(404, "Blog bulunamadı.");
+            }
+
+            var dto = _mapper.Map<BlogDto>(entity);
+            return ResultModel<BlogDto>.Succeed(dto);
+        }
+        catch (Exception ex)
+        {
+            return ResultModel<BlogDto>.Failure(500, ex.Message);
+        }
+    }
+    async Task<ResultModel<string>> IBlogService.AddAsync(BlogDto dto)
+    {
+        try
+        {
+            var entity = _mapper.Map<Blog>(dto);
+            await _repository.AddAsync(entity);
+            await _unitOfWork.CommitAsync();
+            return ResultModel<string>.Succeed("Blog eklendi");
+        }
+        catch (Exception ex)
+        {
+            return ResultModel<string>.Failure(500, ex.Message);
+        }
     }
 
-    public Task DeleteAsync(string id)
+    async Task<ResultModel<string>> IBlogService.UpdateAsync(BlogDto dto)
     {
-        throw new NotImplementedException();
-    }
+        try
+        {
+            var entity = await _repository.GetByIdAsync(dto.Id);
 
-    public async Task<BlogDto> GetByIdAsync(string id)
-    {
-        var entity = await _repository.GetByIdAsync(id);
-        return _mapper.Map<BlogDto>(entity);
-    }
+            if (entity is null)
+            {
+                return ResultModel<string>.Failure(404, "Blog bulunamadı.");
+            }
 
-    public Task UpdateAsync(BlogDto dto)
+            _mapper.Map(dto, entity);
+            entity.UpdatedDate = DateTime.Now;
+
+            await _repository.UpdateAsync(entity);
+            await _unitOfWork.CommitAsync();
+
+            return ResultModel<string>.Succeed("Blog güncellendi");
+        }
+        catch (Exception ex)
+        {
+            return ResultModel<string>.Failure(500, ex.Message);
+        }
+    }
+    async Task<ResultModel<string>> IBlogService.DeleteAsync(string id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var entity = await _repository.GetByIdAsync(id);
+
+            if (entity is null)
+            {
+                return ResultModel<string>.Failure(404, "Blog bulunamadı.");
+            }
+
+            await _repository.DeleteAsync(id);
+            await _unitOfWork.CommitAsync();
+            return ResultModel<string>.Succeed("Blog Silindi");
+        }
+        catch (Exception ex)
+        {
+            return ResultModel<string>.Failure(500, ex.Message);
+        }
     }
 }

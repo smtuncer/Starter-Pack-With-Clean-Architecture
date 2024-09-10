@@ -26,6 +26,17 @@ public class BlogController : ControllerBase
         return StatusCode(response.StatusCode, new { errors = response.ErrorMessages });
     }
     [HttpPost]
+    public async Task<IActionResult> Update(UpdateBlogCommand request, CancellationToken cancellationToken)
+    {
+        var response = await _mediator.Send(request, cancellationToken);
+        if (response.IsSuccessful)
+        {
+            return Ok(new { message = response.Data });
+        }
+
+        return StatusCode(response.StatusCode, new { errors = response.ErrorMessages });
+    }
+    [HttpPost]
     public async Task<IActionResult> GetAll(GetAllBlogQuery request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
@@ -38,6 +49,17 @@ public class BlogController : ControllerBase
     }
     [HttpPost]
     public async Task<IActionResult> GetById(GetByIdBlogQuery request, CancellationToken cancellationToken)
+    {
+        var response = await _mediator.Send(request, cancellationToken);
+        if (response.IsSuccessful)
+        {
+            return Ok(response.Data);
+        }
+
+        return StatusCode(response.StatusCode, response.ErrorMessages);
+    }
+    [HttpPost]
+    public async Task<IActionResult> Delete(DeleteBlogCommand request, CancellationToken cancellationToken)
     {
         var response = await _mediator.Send(request, cancellationToken);
         if (response.IsSuccessful)

@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Project.Application.Features.Queries.Blogs;
-using Project.Application.Models;
 using Project.Domain.Dtos;
 using Project.Domain.Interfaces;
+using Project.Domain.Model;
 
 public class GetAllBlogQueryHandler : IRequestHandler<GetAllBlogQuery, ResultModel<IEnumerable<BlogDto>>>
 {
@@ -15,16 +15,6 @@ public class GetAllBlogQueryHandler : IRequestHandler<GetAllBlogQuery, ResultMod
 
     public async Task<ResultModel<IEnumerable<BlogDto>>> Handle(GetAllBlogQuery request, CancellationToken cancellationToken)
     {
-        try
-        {
-            var blogs = await _blogService.GetAllAsync();
-
-            return ResultModel<IEnumerable<BlogDto>>.Succeed(blogs);
-        }
-        catch (Exception ex)
-        {
-            // Hata durumunda Failure metodu ile hata mesajını dön
-            return ResultModel<IEnumerable<BlogDto>>.Failure(500, ex.Message);
-        }
+        return await _blogService.GetAllAsync();
     }
 }

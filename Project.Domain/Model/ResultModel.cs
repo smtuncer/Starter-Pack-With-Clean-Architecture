@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Project.Application.Models;
+namespace Project.Domain.Model;
 public class ResultModel<TEntity>
 {
     public ResultModel(TEntity data)

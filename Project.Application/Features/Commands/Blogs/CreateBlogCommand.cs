@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using Project.Application.Models;
+using Project.Domain.Model;
 
 namespace Project.Application.Features.Commands.Blogs;
 public class CreateBlogCommand : IRequest<ResultModel<string>>
