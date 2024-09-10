@@ -34,9 +34,14 @@
     }
     ```
 
-2. Migrate the database:
+2. Add migration:
     ```bash
-    dotnet ef database update
+    add-migration YOURMIGRATIONNAME
+    ```
+    
+3. Update database:
+    ```bash
+    update-database
     ```
 
 
