@@ -1,6 +1,6 @@
 
 
-# A quick start to your projects.
+# A Quick Start To Your Projects
 
 ## Features
 - CQRS (Command Query Responsibility Segregation) structure using MediatR
