@@ -1,6 +1,8 @@
 
 
 # A Quick Start To Your Projects
+This project helps software developers start new projects faster. 
+The project has **Clean Architecture** principles. Technologies such as **.NET 8**, **Entity Framework Core**, **MediatR**, **AutoMapper** were used.
 
 ## Features
 - CQRS (Command Query Responsibility Segregation) structure using MediatR
