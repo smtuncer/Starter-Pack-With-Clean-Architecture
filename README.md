@@ -5,19 +5,20 @@ This project helps software developers start new projects faster.
 The project has **Clean Architecture** principles. Technologies such as **.NET 8**, **Entity Framework Core**, **MediatR**, **AutoMapper** were used.
 
 ## Features
-- CQRS (Command Query Responsibility Segregation) structure using MediatR
-- Crud transactions with GenericRepository
-- Performance database queries using IQueryable
-- Unit of work and Repository dessing patten  
-- DTO management with AutoMapper
+- **CQRS (Command Query Responsibility Segregation)** structure using **MediatR**
+- Crud transactions with **GenericRepository**
+- Performance database queries using **IQueryable**
+- **Unit of work** and **Repository** dessing patten  
+- DTO management with **AutoMapper**
+- **Result stracture** and **ExceptionMiddleware**
 
 
 ## Technologies
-- .NET 8: The main development language of the project.
-- Entity Framework Core: Used for database operations.
-- MediatR: Management of the CQRS structure.
-- AutoMapper: DTO and entity conversions.
-- SQL Server: Used as database.
+- **.NET 8:** The main development language of the project.
+- **Entity Framework Core:** Used for database operations.
+- **MediatR:** Management of the CQRS structure.
+- **AutoMapper:** DTO and entity conversions.
+- **SQL Server:** Used as database.
 
 ## Installation
 ### Requirements
