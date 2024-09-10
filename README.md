@@ -10,7 +10,7 @@
 - DTO management with AutoMapper
 
 
-## Technologies Used
+## Technologies
 - .NET 8: The main development language of the project.
 - Entity Framework Core: Used for database operations.
 - MediatR: Management of the CQRS structure.
